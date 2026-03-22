@@ -3,80 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kakang PlayStation Rental</title>
+    <title>Modern Gaming Hub</title>
     <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #121212;
-            color: #fff;
-        }
-        header {
-            background: linear-gradient(90deg, #1a1a1a, #002b5c);
-            padding: 20px;
-            text-align: center;
-        }
-        h1 {
-            font-size: 2.5em;
-            color: #00ff00;
-        }
-        .clock {
-            font-size: 1.5em;
-            margin: 20px 0;
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            bottom: 0;
-            width: 100%;
-            background: #1a1a1a;
-        }
-        .whatsapp {
-            display: inline-block;
-            margin: 20px;
-            padding: 10px 20px;
-            background-color: #25D366;
-            color: white;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 1.8em;
-            }
-            .clock {
-                font-size: 1.2em;
-            }
-        }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #282c34; color: white; text-align: center; }
+        h1 { color: #61dafb; }
+        #clock { font-size: 2em; }
+        .neon { text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 15px #ff00ff; }
+        .status-indicator { display: inline-block; width: 20px; height: 20px; border-radius: 50%; margin: 10px; }
+        .online { background-color: green; }
+        .offline { background-color: red; }
+        #features { display: flex; justify-content: space-around; margin: 20px; }
+        .feature { padding: 10px; }
+        #whatsapp-btn { background-color: #25D366; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+        #whatsapp-btn:hover { background-color: #128C7E; }
     </style>
-</head>
-<body>
-    <header>
-        <h1>Welcome to Kakang PlayStation Rental</h1>
-        <div class="clock" id="clock"></div>
-    </header>
-    <main>
-        <section>
-            <h2>Rent Your Favorite Games!</h2>
-            <p>Explore our extensive collection of games available for rent.</p>
-        </section>
-        <section>
-            <h2>Contact Us</h2>
-            <a href="https://wa.me/yourwhatsappnumber" class="whatsapp">Chat with us on WhatsApp</a>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2026 Kakang PlayStation Rental</p>
-    </footer>
     <script>
         function updateClock() {
-            const options = { timeZone: 'Asia/Jakarta', hour: '2-digit', minute: '2-digit', second: '2-digit' };
             const now = new Date();
-            document.getElementById('clock').innerHTML = now.toLocaleTimeString('en-US', options);
+            const utcDateTime = now.toUTCString();
+            document.getElementById('clock').innerText = utcDateTime;
         }
         setInterval(updateClock, 1000);
-        updateClock();
     </script>
+</head>
+<body>
+    <h1 class="neon">Welcome to the Modern Gaming Hub</h1>
+    <div id="clock"></div>
+    <div class="status-indicator online"></div>
+    <div class="status-indicator offline"></div>
+    <div id="features">
+        <div class="feature">Feature 1: Real-time updates</div>
+        <div class="feature">Feature 2: Neon Effects</div>
+        <div class="feature">Feature 3: Status Indicator</div>
+    </div>
+    <button id="whatsapp-btn" onclick="window.open('https://wa.me/your-number','_blank')">Contact on WhatsApp</button>
+    <script>updateClock();</script>
 </body>
 </html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kakang PlayStation Rental</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #fff;
+        }
+        header {
+            background: linear-gradient(90deg, #1a1a1a, #002b5c);
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #00ff00;
+        }
+        .clock {
+            font-size: 1.5em;
+            margin: 20px 0;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            bottom: 0;
+            width: 100%;
+            background: #1a1a1a;
+        }
+        .whatsapp {
+            display: inline-block;
+            margin: 20px;
+            padding: 10px 20px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            .clock {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Kakang PlayStation Rental</h1>
+        <div class="clock" id="clock"></div>
+    </header>
+    <main>
+        <section>
+            <h2>Rent Your Favorite Games!</h2>
+            <p>Explore our extensive collection of games available for rent.</p>
+        </section>
+        <section>
+            <h2>Contact Us</h2>
+            <a href="https://wa.me/yourwhatsappnumber" class="whatsapp">Chat with us on WhatsApp</a>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Kakang PlayStation Rental</p>
+    </footer>
+    <script>
+        function updateClock() {
+            const options = { timeZone: 'Asia/Jakarta', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            const now = new Date();
+            document.getElementById('clock').innerHTML = now.toLocaleTimeString('en-US', options);
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+</html>
